@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 {
   std::cout << "sysfspwm Example" << std::endl;
   
-  std::string path = "/sys/class/pwm/pwmchip0/pwm0";
+  std::string path = "/sys/class/pwm/pwmchip6";
   if (argc != 5)
   {
     //we don't have  path on the command line. Print the usage, and then list all the available LEDs.
