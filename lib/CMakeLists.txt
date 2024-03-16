@@ -51,7 +51,7 @@ add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR} EXCLUDE_FROM_
 
 #fetch udevpp
 download_project(PROJ                udevpp
-                 GIT_REPOSITORY      https://github.com/zeroping/libudevpp.git
+                 GIT_REPOSITORY      https://github.com/danjperron/libudevpp.git
                  GIT_TAG             cmakesubmod
                  PREFIX ${CMAKE_CURRENT_BINARY_DIR}
                  UPDATE_DISCONNECTED 1
