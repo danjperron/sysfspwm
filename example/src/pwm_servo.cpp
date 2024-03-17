@@ -35,9 +35,13 @@ int main(int argc, char **argv)
 
   std::vector<sysfspwm::PWM> servos;
 
+// enable Export
+  for(int loop=0;loop<servo_count;loop++)
+     servos.push_back(mypwmchip.export_pwm(loop));
+
+  usleep(500000);
   for(int loop=0;loop<servo_count;loop++)
     {
-     servos.push_back(mypwmchip.export_pwm(loop));
      servos[loop].set_period(std::chrono::nanoseconds(period_in_ns));
      servos[loop].set_duty_cycle(std::chrono::nanoseconds(servo_center));
      servos[loop].set_enabled(true);
