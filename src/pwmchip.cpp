@@ -76,9 +76,8 @@ namespace sysfspwm
         //udevice_.set_sysattr("export", std::to_string(number));
 
         // djp fix march 2024
-        // you need to wait a little to have the export showed
+        // you need to wait a little to have the export showed before accessing any pwm
         udevice_.set_sysattr("export", std::to_string(number));
-        //usleep(100000);
       }
       else
       {

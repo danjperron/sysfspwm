@@ -6,7 +6,7 @@
 #include <thread>
 #include <chrono>
 #include <math.h>
-
+#include <unistd.h>
 #include <sysfspwm.hpp>
 
 
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
   sysfspwm::PWMChip mypwmchip(path);
   
   sysfspwm::PWM mypwm = mypwmchip.export_pwm(pwmnum);
-  
+  usleep(200000);  
   std::cout << "configuring pwm at " << mypwm.udevice_.get_syspath() << std::endl;
   
   if(pwmduty > 0)
