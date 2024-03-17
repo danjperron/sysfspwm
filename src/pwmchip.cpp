@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <iostream>
 #include <fstream>
+#include <unistd.h>
 
 //only used to see if pwm path exists
 #include <sys/stat.h>
@@ -70,9 +71,14 @@ namespace sysfspwm
       
       if (udevice_.has_sysattr("export"))
       {
-        std::cout << "sysfs device has export attribute! The bug is fixed?" << std::endl;
+        //std::cout << "sysfs device has export attribute! The bug is fixed?" << std::endl;
         // This can't work currently, as there's to attribute visible due to the way libsystemd/libudev/libudevpp works
         //udevice_.set_sysattr("export", std::to_string(number));
+
+        // djp fix march 2024
+        // you need to wait a little to have the export showed
+        udevice_.set_sysattr("export", std::to_string(number));
+        usleep(100000);
       }
       else
       {

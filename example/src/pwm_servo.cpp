@@ -59,11 +59,11 @@ int main(int argc, char **argv)
     usleep(200000);
   }
 
-  // disable
+// disable
 //     for(int servo=0;servo<servo_count;servo++)
 //         servos[servo].set_enabled(false);
 
-  
+
   return 0;
 
 }
